@@ -1,5 +1,6 @@
 import "@styles/globals.css"
 import Nav from "@/components/Nav"
+import Footer from "@components/Footer"
 
 export const metadata = {
     title: "prompt",
@@ -17,6 +18,7 @@ const RootLayout = ({children}) => {
                 <Nav />
                 {children}
             </main>
+            <Footer/>
         </body>
     </html>
   )
