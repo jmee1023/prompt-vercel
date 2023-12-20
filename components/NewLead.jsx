@@ -20,7 +20,7 @@ const LeadForm = () => {
     event.preventDefault();
 
     // Replace this with your actual API endpoint
-    const API_URL = 'https://your-api.com/leads';
+    const API_URL = '/api/new-lead';
 
     try {
       const response = await fetch(API_URL, {

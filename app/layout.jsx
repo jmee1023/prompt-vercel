@@ -20,6 +20,7 @@ const RootLayout = ({children}) => {
             </main>
             <Footer/>
         </body>
+        
     </html>
   )
 }

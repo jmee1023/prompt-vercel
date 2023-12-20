@@ -11,12 +11,12 @@ const Nav = () => {
     const [providers, setProviders] = useState(null)
     const [toggleDropdown, setToggleDropdown] = useState(false)
 
-    useEffect(() => {
-        (async () => {
-          const res = await getProviders();
-          setProviders(res);
-        })();
-      }, []);
+    // useEffect(() => {
+    //     (async () => {
+    //       const res = await getProviders();
+    //       setProviders(res);
+    //     })();
+    //   }, []);
 
 
   return (
@@ -25,18 +25,21 @@ const Nav = () => {
         <Image
           src='/assets/images/logo.svg'
           alt='logo'
-          width={30}
+          width={50}
           height={30}
           className='object-contain'
         />
         <p className='logo_text'>PipeLine</p>
       </Link>
       {/*Desdktop nav */}
-      <div className="sm:flex hidden">
+      <div >
         {isUserLoggedIn ? (
-        <div className="flex gap-3 md:gap-5">
-            <Link href="create-prompt" className="black_btn">
-                Create Post
+        <div className="flex gap-5 ">
+            <Link href="people" className="black_btn">
+                New Lead
+            </Link>
+            <Link href="see-people" className="black_btn">
+                See Leads
             </Link>
             <button type="button" onClick={signOut} className="outline_btn">Sign out</button>
             <Link href='/profile'>
@@ -48,22 +51,11 @@ const Nav = () => {
                 alt='profile'
               />
             </Link>
+            
              </div>
         ):(
             <>
-            {providers &&
-              Object.values(providers).map((provider) => (
-                <button
-                  type='button'
-                  key={provider.name}
-                  onClick={() => {
-                    signIn(provider.id);
-                  }}
-                  className='black_btn'
-                >
-                  Sign in
-                </button>
-              ))}
+            Not signed in
           </>
         
         )}
