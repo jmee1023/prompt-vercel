@@ -3,7 +3,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { signIn, signOut, useSession, getProviders } from "next-auth/react";
 
 const Nav = () => {
     const isUserLoggedIn = true
@@ -38,10 +37,10 @@ const Nav = () => {
             <Link href="people" className="black_btn">
                 New Lead
             </Link>
-            <Link href="see-people" className="black_btn">
+            <Link href="LeadsDyn" className="black_btn">
                 See Leads
             </Link>
-            <button type="button" onClick={signOut} className="outline_btn">Sign out</button>
+            <button type="button"  className="outline_btn">Sign out</button>
             <Link href='/profile'>
               <Image
                 src="/assets/images/logo.svg"

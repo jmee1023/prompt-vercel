@@ -1,4 +1,3 @@
-import Feed from "@/components/Feed"
 import LeadsList from "@/components/LeadsList"
 
 const Home = () => (
@@ -11,7 +10,6 @@ const Home = () => (
       <p className='desc text-center'>
       Welcome to Pipeline Sales, where we revolutionize the game for Name, Image, and Likeness (NIL) collectives seeking to connect with small-dollar donors. At Pipeline Sales, we understand the unique challenges faced by athletes and influencers navigating the NIL landscape, and we're here to bridge the gap between talent and support
       </p>
-        <Feed />
         <LeadsList />
 
     </section>

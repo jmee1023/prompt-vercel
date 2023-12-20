@@ -11,3 +11,17 @@ export async function GET(request) {
   const leads = await sql`SELECT * FROM people;`;
   return NextResponse.json({ leads }, { status: 200 });
 }
+
+async function Quizzes(){
+  const quizzes = await sql `SELECT * FROM quizzes`;
+  //console.log(quizzes)
+  return (
+    <ul>
+      {quizzes.map((quiz) => (
+        <li key={quiz.quiz_id} className="underline">
+          <Link href={`/quiz/${quiz.quiz_id}`}>Quiz: {quiz.quiz_id}</Link>
+          </li>
+      ))}
+    </ul>
+  );
+}
