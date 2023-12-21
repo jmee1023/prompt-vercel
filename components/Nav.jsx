@@ -5,63 +5,51 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 
 const Nav = () => {
-    const isUserLoggedIn = true
-
-    const [providers, setProviders] = useState(null)
-    const [toggleDropdown, setToggleDropdown] = useState(false)
-
-    // useEffect(() => {
-    //     (async () => {
-    //       const res = await getProviders();
-    //       setProviders(res);
-    //     })();
-    //   }, []);
-
+  const isUserLoggedIn = true;
 
   return (
-    <nav className='flex-between w-full mb-16 pt-3'>
-         <Link href='/' className='flex gap-2 flex-center'>
+    <nav className="bg-gray-500 text- py-4 px-6 flex items-center justify-between w-full">
+      <Link href="/" className="flex items-center gap-4">
         <Image
-          src='/assets/images/logo.svg'
-          alt='logo'
+          src="/assets/images/logo.svg"
+          alt="logo"
           width={50}
           height={30}
-          className='object-contain'
+          className="object-contain"
         />
-        <p className='logo_text'>PipeLine</p>
+        <p className="font-bold text-3xl tracking-tight text-white uppercase">
+          Pipeline
+        </p>
       </Link>
-      {/*Desdktop nav */}
-      <div >
-        {isUserLoggedIn ? (
-        <div className="flex gap-5 ">
-            <Link href="people" className="black_btn">
-                New Lead
-            </Link>
-            <Link href="LeadsDyn" className="black_btn">
-                See Leads
-            </Link>
-            <button type="button"  className="outline_btn">Sign out</button>
-            <Link href='/profile'>
-              <Image
-                src="/assets/images/logo.svg"
-                width={37}
-                height={37}
-                className='rounded-full'
-                alt='profile'
-              />
-            </Link>
-            
-             </div>
-        ):(
-            <>
-            Not signed in
-          </>
-        
-        )}
-      </div>
-
+      {isUserLoggedIn ? (
+        <div className="flex items-center gap-4">
+          <Link href="people" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            New Lead
+          </Link>
+          <Link href="LeadsDyn" className="bg-blue-500 hover:bg-blue-700 text-white font-serif font-bold py-2 px-4 rounded">
+            See Leads
+          </Link>
+          <button
+            type="button"
+            className="bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded hover:bg-gray-500"
+          >
+            Sign out
+          </button>
+          <Link href="/profile">
+            <Image
+              src="/assets/images/logo.svg"
+              width={37}
+              height={37}
+              className="rounded-full"
+              alt="profile"
+            />
+          </Link>
+        </div>
+      ) : (
+        <p className="text-sm">Not signed in</p>
+      )}
     </nav>
-  )
-}
+  );
+};
 
-export default Nav
+export default Nav;

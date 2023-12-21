@@ -1,19 +1,25 @@
-import LeadsList from "@/components/LeadsList"
+import LeadsList from "@/components/LeadsList";
 
 const Home = () => (
-    <section className='w-full flex-center flex-col'>
-      <h1 className='head_text text-center'>
+  <section className="container mx-auto px-4 py-16">
+    <div className="flex flex-col items-center mb-12">
+      <h1 className="text-4xl font-bold tracking-tight text-center">
         Discover & Share
-        <br className='max-md:hidden' />
-        <span className='orange_gradient text-center'> PipeLine Sales</span>
+        <br className="hidden md:block" />
+        <span className="text-4xl font-bold tracking-tight text-center">
+          Pipeline Sales
+        </span>
       </h1>
-      <p className='desc text-center'>
-      Welcome to Pipeline Sales, where we revolutionize the game for Name, Image, and Likeness (NIL) collectives seeking to connect with small-dollar donors. At Pipeline Sales, we understand the unique challenges faced by athletes and influencers navigating the NIL landscape, and we're here to bridge the gap between talent and support
+      <p className="mt-4 text-lg text-gray-700 max-w-lg mx-auto">
+        Welcome to Pipeline Sales, where we revolutionize the game for Name,
+        Image, and Likeness (NIL) collectives seeking to connect with
+        small-dollar donors. At Pipeline Sales, we understand the unique
+        challenges faced by athletes and influencers navigating the NIL
+        landscape, and we're here to bridge the gap between talent and support.
       </p>
-        <LeadsList />
+    </div>
+    <LeadsList className="w-10" />
+  </section>
+);
 
-    </section>
-  )
-
-
-export default Home
+export default Home;

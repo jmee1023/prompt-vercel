@@ -42,7 +42,7 @@ async function GetLeads() {
 export const page = () => {
   return (
     <div>
-      <h1 className="text-lg font-bold text-center py-4">Pipeline Leads</h1>
+      <h1 className="text-lg font-mono font-semibold text-center py-5">Pipeline Leads</h1>
       <GetLeads />
     </div>
   );
