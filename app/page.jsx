@@ -2,14 +2,14 @@ import LeadsList from "@/components/LeadsList";
 
 const Home = () => (
   <section className="container mx-auto px-4 py-16">
-    <div className="flex flex-col items-center mb-12">
-      <h1 className="text-4xl font-bold tracking-tight text-center">
-        Discover & Share
-        <br className="hidden md:block" />
-        <span className="text-4xl font-bold tracking-tight text-center">
-          Pipeline Sales
-        </span>
-      </h1>
+  <div className="flex flex-col items-center mb-12">
+    <h1 className="text-7xl font-bold tracking-tight text-center">
+      Discover & Share
+      <br className="hidden md:block" />
+      <span className="text-7xl font-bold tracking-tight text-center orange_gradient">
+        Pipeline Sales
+      </span>
+    </h1>
       <p className="mt-4 text-lg text-gray-700 max-w-lg mx-auto">
         Welcome to Pipeline Sales, where we revolutionize the game for Name,
         Image, and Likeness (NIL) collectives seeking to connect with

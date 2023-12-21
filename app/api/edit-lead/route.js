@@ -9,6 +9,8 @@ export async function POST(request) {
 
   console.log("Wew hit the endpoint!");
   console.log(requestBody.notes); 
+  console.log("Is user contacted?")
+  console.log(requestBody.isContacted)
 
  
   const leads = await sql`SELECT * FROM people;`;

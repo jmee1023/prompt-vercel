@@ -4,25 +4,35 @@ import {useState} from 'react'
 
 function Lead({id}){
 
+    
    const details = {
-    first_name: 'JACOB',
-    middle_initial: 'P',
+    id: 1,
+    first_name: 'JACOBB',
     last_name: 'HESSON',
     prefix: 'MR',
     address: '2000 SW 70TH ST',
     city: 'LINCOLN',
     state: 'NE',
-    zip_code: '68532',
     phone: '4024325484',
     email: 'JAKEHESSON13@YAHOO.COM',
     county: 'LANCASTER',
-    estimated_income: '100K - 149.9K'
+    estimated_income: 100000,
+    contacted: false,
+    notes: [ 'New note text', 'New note text number 2' , "Another test", "and one more"]
   }
-  const [notes, setNotes] = useState('');
+    const [notes, setNotes] = useState('');
+    const [isContacted, setIsContacted] = useState(details.contacted);
+    console.log("Is user contact?")
+    console.log(isContacted)
 
-  const handleNotesChange = (event) => {
-    setNotes(event.target.value);
-  };
+    const handleNotesChange = (event) => {
+        setNotes(event.target.value);
+    }
+
+    const handleContactedChange = () => {
+        setIsContacted(!isContacted);
+    };
+  
 
   // Implement logic to handle form submission and save notes (e.g., using fetch or a library like Axios)
   const handleSubmit = async (event) => {
@@ -33,7 +43,7 @@ function Lead({id}){
       const response = await fetch('/api/edit-lead', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' }, // Set appropriate content type
-        body: JSON.stringify({ notes }), // Serialize notes as JSON
+        body: JSON.stringify({ notes,isContacted }), // Serialize notes as JSON
       });
 
       if (!response.ok) {
@@ -63,7 +73,7 @@ function Lead({id}){
         <tr>
           <td className="px-4 py-2 text-left text-gray-600">Name:</td>
           <td className="px-4 py-2 text-left text-gray-600">
-            {`${details.prefix} ${details.first_name} ${details.middle_initial} ${details.last_name}`}
+            {`${details.prefix} ${details.first_name} ${details.last_name}`}
           </td>
         </tr>
         <tr>
@@ -79,10 +89,6 @@ function Lead({id}){
           <td className="px-4 py-2 text-left text-gray-600">{details.state}</td>
         </tr>
         <tr>
-          <td className="px-4 py-2 text-left text-gray-600">Zip Code::</td>
-          <td className="px-4 py-2 text-left text-gray-600">{details.zip_code}</td>
-        </tr>
-        <tr>
           <td className="px-4 py-2 text-left text-gray-600">Phone:</td>
           <td className="px-4 py-2 text-left text-gray-600">{details.phone}</td>
         </tr>
@@ -90,8 +96,42 @@ function Lead({id}){
           <td className="px-4 py-2 text-left text-gray-600">Estimated Income:</td>
           <td className="px-4 py-2 text-left text-gray-600">{details.estimated_income}</td>
         </tr>
+        <tr>
+          <td className="px-4 py-2 text-left text-gray-600">Notes:</td>
+          <td className="px-4 py-2 text-left text-gray-600">
+            <ul>
+              {details.notes.map((note, index) => (
+                <li key={index}>{note}</li>
+              ))}
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td className="px-4 py-2 text-left text-gray-600">Is contacted:</td>
+          <td className="px-4 py-2 text-left text-gray-600">{details.contacted.toString()}</td>
+          <td className="px-4 py-2 text-left text-gray-600">
+            <input
+              type="radio"
+              id="isContactedYes"
+              name="isContacted"
+              value="true"
+              checked={isContacted}
+              onChange={handleContactedChange}
+            />
+            <label htmlFor="isContactedYes">Yes</label>
+
+            <input
+              type="radio"
+              id="isContactedNo"
+              name="isContacted"
+              value="false"
+              checked={!isContacted}
+              onChange={handleContactedChange}
+            />
+            <label htmlFor="isContactedNo">No</label>
+          </td>
+        </tr>
         
-        {/* ... other table rows ... */}
         <tr>
           <td className="px-4 py-2 text-left text-gray-600">Notes:</td>
           <td className="px-4 py-2 text-left">
@@ -112,8 +152,8 @@ function Lead({id}){
   );
 }
 
-const page = ({params}) => {
 
+const page = ({params}) => {
   return (
     <section>
     <div>This is employee {params.id}</div>

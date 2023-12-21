@@ -53,7 +53,7 @@ const LeadForm = () => {
   };
 
   return (
-    <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
+    <form className="container mx-auto p-5 bg-white rounded-lg shadow-md" onSubmit={handleSubmit}>
       <h2 className="text-2xl font-bold text-center mb-4">Add New Lead</h2>
       <input
         type="text"
@@ -102,8 +102,8 @@ const LeadForm = () => {
       />
       <textarea
         name="notes"
-        placeholder="Notes about the lead (optional)"
-        className="rounded-md border border-gray-300 px-3 py-2"
+        placeholder="Notes about the lead"
+        className="rounded-md border border-gray-300 px-3 py-2 align-top"
         value={formData.notes}
         onChange={handleChange}
       />
