@@ -23,10 +23,10 @@ const Nav = () => {
       </Link>
       {isUserLoggedIn ? (
         <div className="flex items-center gap-4">
-          <Link href="people" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+          <Link href="/new-lead" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
             New Lead
           </Link>
-          <Link href="LeadsDyn" className="bg-blue-500 hover:bg-blue-700 text-white font-sans font-bold py-2 px-4 rounded">
+          <Link href="/see-leads" className="bg-blue-500 hover:bg-blue-700 text-white font-sans font-bold py-2 px-4 rounded">
             See Leads
           </Link>
           <button
