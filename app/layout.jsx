@@ -10,8 +10,8 @@ export const metadata = {
 const RootLayout = ({children}) => {
   return (
     <html lang="en">
-        <body>
-            <main className='app'>
+        <body className="bg-gradient-to-r from-gray-800 to-gray-600 p-5">
+            <main>
                 <Nav />
                 {children}
             </main>

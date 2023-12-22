@@ -11,7 +11,7 @@ async function GetNewLeads(){
     .filter((key) => key !== "notes") // Filter out the "notes" key
     .map((key) => (
       <th key={key} className="px-4 py-2 bg-gray-200 border border-gray-300 font-bold text-left">
-        {key}
+        {key.toUpperCase()}
       </th>
     ));
 headerCells.push(
@@ -25,13 +25,13 @@ headerCells.push(
    {Object.entries(lead)
       .filter(([key]) => key !== "notes")
       .map(([key, value]) => (
-        <td key={key} className="px-4 py-2 border border-gray-300 text-left">
+  <td key={key} className="text-gray-200 px-4 py-2 border border-gray-300 text-left hover:transform hover:scale-105 transition-transform">
           {key === "contacted" ? (value ? "Yes" : "No") : value} {/* Conditional rendering for boolean */}
         </td>
       ))}
       
 
-    <td key="edit" className="px-4 py-2 border border-gray-300 text-left">
+    <td key="edit" className="px-4 py-2 border text-gray-200 underline border-gray-300 text-left">
       <Link href={`/edit/${lead.id}`}>
         Edit
       </Link>

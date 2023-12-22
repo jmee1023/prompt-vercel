@@ -10,7 +10,7 @@ const Home = () => (
         Pipeline Sales
       </span>
     </h1>
-      <p className="mt-4 text-lg text-gray-700 max-w-lg mx-auto">
+      <p className="mt-4 text-lg text-gray-200 max-w-lg mx-auto">
         Welcome to Pipeline Sales, where we revolutionize the game for Name,
         Image, and Likeness (NIL) collectives seeking to connect with
         small-dollar donors. At Pipeline Sales, we understand the unique

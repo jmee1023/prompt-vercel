@@ -8,7 +8,7 @@ const Nav = () => {
   const isUserLoggedIn = true;
 
   return (
-    <nav className="bg-gray-500 text- py-4 px-6 flex items-center justify-between w-full">
+  <nav className="text-white py-2 px-1 flex items-center justify-between w-full border-b-4 border-gray-500 shadow-md">
       <Link href="/" className="flex items-center gap-4">
         <Image
           src="/assets/images/logo.svg"
@@ -22,11 +22,11 @@ const Nav = () => {
         </p>
       </Link>
       {isUserLoggedIn ? (
-        <div className="flex items-center gap-4">
-          <Link href="/new-lead" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+        <div className="flex items-center gap-7">
+          <Link href="/new-lead" className="bg-gray-500 hover:bg-gray-700 text-gray-200 font-bold py-2 px-4 rounded">
             New Lead
           </Link>
-          <Link href="/see-leads" className="bg-blue-500 hover:bg-blue-700 text-white font-sans font-bold py-2 px-4 rounded">
+          <Link href="/see-leads" className="bg-gray-500 hover:bg-gray-700 text-gray-200 font-sans font-bold py-2 px-4 rounded">
             See Leads
           </Link>
           <button
