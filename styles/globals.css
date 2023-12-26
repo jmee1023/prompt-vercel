@@ -9,8 +9,24 @@
   @apply bg-gradient-to-r from-amber-500 via-orange-600 to-yellow-500 bg-clip-text text-transparent;
 }
 
-@media only screen and (max-width: 1800px) {
+/* @media only screen and (max-width: 1800px) {
   html {
     width: fit-content;
   }
+} */
+
+.table-container {
+  overflow-x: auto;
+}
+
+.table-container table {
+  width: 100%;
+  max-width: 100%;
+  table-layout: fixed;
+  background-color: #f0f0f0; /* Light gray background color */
+}
+
+.table-container th, .table-container td {
+  padding: 6px; /* Adjust the padding as needed */
+  border: 1px solid #ddd; /* Optional: Add borders for better visibility */
 }

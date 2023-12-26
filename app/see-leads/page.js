@@ -40,7 +40,7 @@ headerCells.push(
 ));
 
   return (
-    <table className="w-full min-w-full table-auto shadow-md rounded-md overflow-hidden">
+    <table className=" table-container w-full min-w-full table-auto shadow-md rounded-md overflow-hidden">
       <thead>{headerCells && <tr>{headerCells}</tr>}</thead>
       <tbody>{tableBody}</tbody>
     </table>
@@ -51,7 +51,7 @@ const page = () => {
 
 
   return (
-    <div>page
+    <div >page
         <GetNewLeads/>
     </div>
   )

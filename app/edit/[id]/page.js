@@ -1,11 +1,16 @@
 "use client"
 import { useState, useEffect } from 'react'
+import { redirect } from 'next/navigation'
+import { useRouter } from 'next/navigation';
  
 function Lead({id}) {
   const [data, setData] = useState(null)
   const [isLoading, setLoading] = useState(true)
   const [isContacted, setIsContacted] = useState(false)
   const [notes, setNotes] = useState('');
+  const router = useRouter();
+
+
   const user = id.id
   console.log(user)
   
@@ -15,8 +20,12 @@ function Lead({id}) {
 
   const handleNotesChange = (event) => {
         setNotes(event.target.value);
+
+
     }
-const handleSubmit = async (event) => {
+
+      
+  const handleSubmit = async (event) => {
         event.preventDefault();
     
         try {
@@ -35,6 +44,9 @@ const handleSubmit = async (event) => {
           // Handle successful response (e.g., clear notes, display success message)
           setNotes('');
           alert('Notes saved successfully!');
+          router.push('/');
+
+
         } catch (error) {
           console.error('Error saving notes:', error);
           alert('Error saving notes:' + error.message);
@@ -89,11 +101,11 @@ const handleSubmit = async (event) => {
         <tr>
           <td className="px-4 py-2 text-left text-gray-100">Notes:</td>
           <td className="px-4 py-2 text-left text-gray-100">
-            <ul>
-              {data.notes.map((note, index) => (
-                <li key={index}>{note}</li>
-              ))}
-            </ul>
+          <ul>
+            {data.notes?.map((note, index) => (
+              <li key={index}>{note}</li>
+            )) || "No notes available"}
+          </ul>
           </td>
         </tr>
         <tr>
@@ -135,11 +147,10 @@ const handleSubmit = async (event) => {
               </button>
             </form>
           </td>
-        </tr>
-
-        
+        </tr>        
     </tbody>
     </table>
+
   )
 }
 

@@ -5,7 +5,7 @@ const Home = () => (
   <div className="flex flex-col items-center mb-12">
     <h1 className="text-7xl font-bold tracking-tight text-center">
       Discover & Share
-      <br className="hidden md:block" />
+      <br />
       <span className="text-7xl font-bold tracking-tight text-center orange_gradient">
         Pipeline Sales
       </span>
