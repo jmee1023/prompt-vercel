@@ -10,12 +10,12 @@ async function GetNewLeads(){
     Object.keys(leads.rows[0])
     .filter((key) => key !== "notes") // Filter out the "notes" key
     .map((key) => (
-      <th key={key} className="px-4 py-2 bg-gray-200 border border-gray-300 font-bold text-left">
+      <th key={key} className="px-4 py-2 font-bold text-center">
         {key.toUpperCase()}
       </th>
     ));
 headerCells.push(
-  <th key="edit" className="px-4 py-2 bg-gray-200 border border-gray-300 font-bold text-left">
+  <th key="edit" className="px-4 py-2 font-bold text-left">
     Edit
   </th>
 ); 

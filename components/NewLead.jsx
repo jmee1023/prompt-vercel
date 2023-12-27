@@ -53,65 +53,95 @@ const LeadForm = () => {
   };
 
   return (
-    <form className="container mx-auto p-5 bg-white rounded-lg shadow-md" onSubmit={handleSubmit}>
-      <h2 className="text-2xl font-bold text-center mb-4">Add New Lead</h2>
-      <input
-        type="text"
-        name="name"
-        placeholder="Name"
-        className="rounded-md border border-gray-300 px-3 py-2"
-        required
-        value={formData.name}
-        onChange={handleChange}
-      />
-      <input
-        type="tel"
-        name="phoneNumber"
-        placeholder="Phone Number"
-        className="rounded-md border border-gray-300 px-3 py-2"
-        required
-        value={formData.phoneNumber}
-        onChange={handleChange}
-      />
-      <input
-        type="email"
-        name="email"
-        placeholder="Email Address"
-        className="rounded-md border border-gray-300 px-3 py-2"
-        required
-        value={formData.email}
-        onChange={handleChange}
-      />
-      <input
-        type="number"
-        name="estimatedIncome"
-        placeholder="Estimated Income"
-        className="rounded-md border border-gray-300 px-3 py-2"
-        required
-        value={formData.estimatedIncome}
-        onChange={handleChange}
-      />
-      <input
-        type="text"
-        name="hometown"
-        placeholder="Hometown"
-        className="rounded-md border border-gray-300 px-3 py-2"
-        required
-        value={formData.hometown}
-        onChange={handleChange}
-      />
-      <textarea
-        name="notes"
-        placeholder="Notes about the lead"
-        className="rounded-md border border-gray-300 px-3 py-2 align-top"
-        value={formData.notes}
-        onChange={handleChange}
-      />
-      <button type="submit" className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600">
-        Submit Lead
-      </button>
-    </form>
-  );
+  
+      <form className="max-w-md mx-auto p-6  rounded-md shadow-md">
+        <h2 className="text-2xl font-bold text-center mb-6">Add New Lead</h2>
+  
+        <div className="mb-4">
+          <label className="block text-sm font-semibold text-gray-600">Name</label>
+          <input
+            type="text"
+            name="name"
+            placeholder="Enter your name"
+            className="w-full rounded-md border border-gray-300 px-3 py-2"
+            required
+            value={formData.name}
+            onChange={handleChange}
+          />
+        </div>
+  
+        <div className="mb-4">
+          <label className="block text-sm font-semibold text-gray-600">Phone Number</label>
+          <input
+            type="tel"
+            name="phoneNumber"
+            placeholder="Enter your phone number"
+            className="w-full rounded-md border border-gray-300 px-3 py-2"
+            required
+            value={formData.phoneNumber}
+            onChange={handleChange}
+          />
+        </div>
+  
+        <div className="mb-4">
+          <label className="block text-sm font-semibold text-gray-600">Email Address</label>
+          <input
+            type="email"
+            name="email"
+            placeholder="Enter your email address"
+            className="w-full rounded-md border border-gray-300 px-3 py-2"
+            required
+            value={formData.email}
+            onChange={handleChange}
+          />
+        </div>
+  
+        <div className="mb-4">
+          <label className="block text-sm font-semibold text-gray-600">Estimated Income</label>
+          <input
+            type="number"
+            name="estimatedIncome"
+            placeholder="Enter your estimated income"
+            className="w-full rounded-md border border-gray-300 px-3 py-2"
+            required
+            value={formData.estimatedIncome}
+            onChange={handleChange}
+          />
+        </div>
+  
+        <div className="mb-4">
+          <label className="block text-sm font-semibold text-gray-600">Hometown</label>
+          <input
+            type="text"
+            name="hometown"
+            placeholder="Enter your hometown"
+            className="w-full rounded-md border border-gray-300 px-3 py-2"
+            required
+            value={formData.hometown}
+            onChange={handleChange}
+          />
+        </div>
+  
+        <div className="mb-4">
+          <label className="block text-sm font-semibold text-gray-600">Notes about the lead</label>
+          <textarea
+            name="notes"
+            placeholder="Enter notes about the lead"
+            className="w-full rounded-md border border-gray-300 px-3 py-2"
+            value={formData.notes}
+            onChange={handleChange}
+          />
+        </div>
+  
+        <button
+          type="submit"
+          className="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600"
+        >
+          Submit Lead
+        </button>
+      </form>
+  )
 };
+
 
 export default LeadForm;

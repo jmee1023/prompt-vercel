@@ -24,6 +24,14 @@ function Lead({id}) {
 
     }
 
+  const successMessage =  () => {
+    return(
+      <div className="alert alert-success">
+      <span>Message sent successfully.</span>
+    </div>
+    )
+  }
+
       
   const handleSubmit = async (event) => {
         event.preventDefault();
@@ -43,6 +51,7 @@ function Lead({id}) {
           console.log('Notes saved successfully------:', responseData);
           // Handle successful response (e.g., clear notes, display success message)
           setNotes('');
+          successMessage()
           alert('Notes saved successfully!');
           router.push('/');
 
@@ -64,7 +73,9 @@ function Lead({id}) {
       })
   }, [])
   console.log(data)
-  if (isLoading) return <p>Loading...</p>
+  if (isLoading) return <div className="flex items-center justify-center h-screen">
+  <span className="loading loading-bars loading-lg"></span>
+</div>
   if (!data) return <p>No profile data</p>
  
   return (
