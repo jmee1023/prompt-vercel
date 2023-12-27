@@ -18,7 +18,6 @@ const Home = () => (
         landscape, and we're here to bridge the gap between talent and support.
       </p>
     </div>
-    <LeadsList className="w-10" />
   </section>
 );
 
