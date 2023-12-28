@@ -10,6 +10,12 @@
   @apply bg-gradient-to-r from-amber-500 via-orange-600 to-yellow-500 bg-clip-text text-transparent;
 }
 
+.toast-message {
+  background: rgb(0, 0, 0);
+
+  
+}
+
 /* @media only screen and (max-width: 1800px) {
   html {
     width: fit-content;

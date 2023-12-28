@@ -2,6 +2,7 @@ import "@styles/globals.css"
 import Nav from "@/components/Nav"
 import Footer from "@components/Footer"
 
+
 export const metadata = {
     title: "prompt",
     description: "Discover and share AI prompts"

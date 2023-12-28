@@ -1,7 +1,17 @@
 "use client"
 import React, { useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const LeadForm = () => {
+  const showToastMessage = () => {
+    toast.success("Lead Submitted", {
+      position: toast.POSITION.TOP_CENTER,
+      className: "toast-message",
+
+    });
+  };
+
   const [formData, setFormData] = useState({
     name: '',
     phoneNumber: '',
@@ -33,7 +43,7 @@ const LeadForm = () => {
 
       if (response.ok) {
         // Handle successful submission
-        alert('Lead successfully added!');
+        showToastMessage()
         setFormData({
           name: '',
           phoneNumber: '',
@@ -62,7 +72,7 @@ const LeadForm = () => {
           <input
             type="text"
             name="name"
-            placeholder="Enter your name"
+            placeholder="Enter Lead's name"
             className="w-full rounded-md border border-gray-300 px-3 py-2"
             required
             value={formData.name}
@@ -75,7 +85,7 @@ const LeadForm = () => {
           <input
             type="tel"
             name="phoneNumber"
-            placeholder="Enter your phone number"
+            placeholder="Enter Lead's number"
             className="w-full rounded-md border border-gray-300 px-3 py-2"
             required
             value={formData.phoneNumber}
@@ -88,7 +98,7 @@ const LeadForm = () => {
           <input
             type="email"
             name="email"
-            placeholder="Enter your email address"
+            placeholder="Enter Lead's email address"
             className="w-full rounded-md border border-gray-300 px-3 py-2"
             required
             value={formData.email}
@@ -101,7 +111,7 @@ const LeadForm = () => {
           <input
             type="number"
             name="estimatedIncome"
-            placeholder="Enter your estimated income"
+            placeholder="Enter Lead's estimated income"
             className="w-full rounded-md border border-gray-300 px-3 py-2"
             required
             value={formData.estimatedIncome}
@@ -114,7 +124,7 @@ const LeadForm = () => {
           <input
             type="text"
             name="hometown"
-            placeholder="Enter your hometown"
+            placeholder="Enter Lead's hometown"
             className="w-full rounded-md border border-gray-300 px-3 py-2"
             required
             value={formData.hometown}
@@ -134,11 +144,14 @@ const LeadForm = () => {
         </div>
   
         <button
-          type="submit"
+          type="button"
+          onClick={handleSubmit}
           className="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600"
         >
           Submit Lead
         </button>
+        <ToastContainer />
+
       </form>
   )
 };

@@ -1,6 +1,14 @@
+"use client"
 import {Button, Label, ListBox, ListBoxItem, Popover, Select, SelectValue} from 'react-aria-components';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const page = () => {
+    const showToastMessage = () => {
+        toast.success("Success Notification !", {
+          position: toast.POSITION.TOP_RIGHT,
+        });
+      };
   return (
 <div>
     <div>
@@ -60,6 +68,10 @@ export const page = () => {
     <span>Message sent successfully.</span>
   </div>
 </div>
+<div>
+      <button onClick={showToastMessage}>Notify</button>
+      <ToastContainer />
+    </div>
 </div>
 
   )
