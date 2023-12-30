@@ -73,33 +73,33 @@ function Lead({id}) {
     <table className="w-full table-auto shadow-md rounded-md overflow-hidden">
       <tbody>
         <tr>
-          <td className="px-4 py-2 text-left text-gray-100">Name:</td>
+          <td className="px-4 py-2 text-left text-gray-400">Name:</td>
           <td className="px-4 py-2 text-left text-gray-100">
             {`${data.prefix} ${data.first_name} ${data.last_name}`}
           </td>
         </tr>
         <tr>
-          <td className="px-4 py-2 text-left text-gray-100">Address:</td>
+          <td className="px-4 py-2 text-left text-gray-400">Address:</td>
           <td className="px-4 py-2 text-left text-gray-100">{data.address}</td>
         </tr>
         <tr>
-          <td className="px-4 py-2 text-left text-gray-100">City:</td>
+          <td className="px-4 py-2 text-left text-gray-400">City:</td>
           <td className="px-4 py-2 text-left text-gray-100">{data.city}</td>
         </tr>
         <tr>
-          <td className="px-4 py-2 text-left text-gray-100">State:</td>
+          <td className="px-4 py-2 text-left text-gray-400">State:</td>
           <td className="px-4 py-2 text-left text-gray-100">{data.state}</td>
         </tr>
         <tr>
-          <td className="px-4 py-2 text-left text-gray-100">Phone:</td>
+          <td className="px-4 py-2 text-left text-gray-400">Phone:</td>
           <td className="px-4 py-2 text-left text-gray-100">{data.phone}</td>
         </tr>
         <tr>
-          <td className="px-4 py-2 text-left text-gray-100">Estimated Income:</td>
+          <td className="px-4 py-2 text-left text-gray-400">Estimated Income:</td>
           <td className="px-4 py-2 text-left text-gray-100">{data.estimated_income}</td>
         </tr>
         <tr>
-          <td className="px-4 py-2 text-left text-gray-100">Notes:</td>
+          <td className="px-4 py-2 text-left text-white">Notes:</td>
           <td className="px-4 py-2 text-left text-gray-100">
           <ul>
             {data.notes?.map((note, index) => (
