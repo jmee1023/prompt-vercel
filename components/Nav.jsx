@@ -34,9 +34,19 @@ const Nav = async () => {
           See Leads
         </Link>
         {session ? (
-          <Link href="/api/auth/signout?callbackUrl=/">Logout</Link>
+          <Link
+            href="/api/auth/signout?callbackUrl=/"
+            className="bg-gray-500 hover:bg-gray-700 text-gray-200 font-sans font-bold py-2 px-4 rounded"
+          >
+            Logout
+          </Link>
         ) : (
-          <Link href="/api/auth/signin?callbackUrl=/">Login</Link>
+          <Link
+            href="/api/auth/signin?callbackUrl=/"
+            className="bg-gray-500 hover:bg-gray-700 text-gray-200 font-sans font-bold py-2 px-4 rounded"
+          >
+            Login
+          </Link>
         )}
 
         <Link href="/profile">
