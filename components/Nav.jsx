@@ -16,7 +16,7 @@ const Nav = async () => {
           height={30}
           className="object-contain"
         />
-        <p className="font-bold text-3xl tracking-tight text-white uppercase">
+        <p className="font-bold text-3xl tracking-tight text-white uppercase hover:text-gray-400">
           Pipeline
         </p>
       </Link>
