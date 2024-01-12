@@ -12,7 +12,7 @@ const RootLayout = ({ children }) => {
   return (
     <html lang="en">
       <AuthProvider>
-        <body className="bg-gradient-to-r from-gray-800 to-gray-600 p-5">
+        <body className="bg-gradient-to-r from-blue-950 to-gray-600 p-5">
           <div className="flex flex-col min-h-screen">
             <main className="flex-grow pb-16">
               {" "}

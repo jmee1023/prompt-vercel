@@ -32,7 +32,7 @@ const Home = () => (
       <h1 className="orange_gradient text-7xl font-bold tracking-tight text-center mb-4 mt-4 max-w-lg hover:transform hover:scale-105 transition-transform">
         Our mission
       </h1>
-      <p className="mt-4 text-lg text-gray-200 max-w-2xl mx-auto p-4 text-center bg-gray-700 shadow-lg hover:transform hover:scale-105 transition-transform">
+      <p className="mt-4 text-lg text-gray-200 max-w-2xl mx-auto p-4 text-center hover:transform hover:scale-105 transition-transform">
         At Pipeline Sales, our mission is to unlock the full potential of NIL
         collectives by providing a specialized platform for reaching and
         connecting with small-dollar donors. We believe that every athlete and
